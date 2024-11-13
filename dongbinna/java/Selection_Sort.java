@@ -21,6 +21,38 @@ public class Selection_Sort{
         }
     
     }
+
+    public static class selection_practive{
+        public static void main(String[] args) {
+
+            int[] array = {1, 5, 8, 9, 4, 3, 2, 10, 7, 6};
+            int tmp = 0;
+            int index = 0;
+
+            for (int i = 0; i < array.length; i++) {
+                int min = 999;
+                for (int j = i; j < array.length; j++) {
+                    // min 값이 array[j] 보다 작을시 min으로 바꾸기
+                    if (min > array[j]) {
+                        min = array[j];
+                        // 최소값 인덱스를 저장
+                        index = j;
+                    }
+                }
+                // 현재 위치 tmp에 저장
+                tmp = array[i];
+                // 최소 값 인덱스를 배열에 바꿔주기
+                array[i] = array[index];
+                // 바꾼값에 tmp 저장 된 값 채우기
+                array[index] = tmp;
+            }
+
+            for (int arrays : array) {
+                System.out.println(arrays);
+            }
+        }
+
+    }
 }
 // 1 2 3 4 5 6 7 8 9 10
 // 10 + 9 + 8 + .. + 1 -> 10 * (10 + 1) /2 = 55번을 비교연산을 해야 한다.
