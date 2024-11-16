@@ -1,0 +1,25 @@
+package myjava;
+
+public class insertionSortAlgorithm {
+	public static void main(String[] args) {
+		// 삽입 정렬
+		// 1 10 5 8 7 6 4 3 2 9
+		int[] array = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
+		int temp = 0;
+		int index = 0;
+		
+		for(int i = 0; i < array.length - 1; i++) {
+			index = i;
+			while (array[index] > array[index + 1]) {
+				temp = array[index]; // 비교값 보다 큰 값을 임시저장
+				array[index] = array[index + 1]; // 현재 작은 값을 큰 값의 위치로 옮기기
+				array[index + 1] = temp; // temp // 임시저장 했던 값을 다시 index + 1 위치에 저장 후
+				index--; // 이전 index로 이동 후 배열이 index가 안 클때까지 반복
+			}
+		}
+		
+		for (int each : array) {
+			System.out.printf("%d", each);
+		}
+	}
+}
